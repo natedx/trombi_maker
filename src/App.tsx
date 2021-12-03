@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from "./Person";
 
 import names from './names.json'
+
 
 function App() {
 
@@ -17,12 +19,8 @@ function App() {
         <div className={"container"}>
         {
             names.names.map((item) => {
-
                 return(
-                    <div>
-                        <img src={process.env.PUBLIC_URL + '/images/'+ item.imageFile +'.png'} className="App-logo" alt="logo" />
-                        <p>{item.firstName}, {item.lastName}</p>
-                    </div>
+                    <Person item={item}></Person>
                 )
             })
         }
